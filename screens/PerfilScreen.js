@@ -2,29 +2,40 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 
 export default function PerfilScreen({ navigation }) {
     return (
-        <>
+        <View style={styles.container}>
             <View style={styles.perfil}>
-                <Text style={styles.nome}> Gabriela Yamamoto
-                </Text>
-                <Image source={require('../assets/imagem-perfil.png')} style={styles.imagem}></Image>
+                <Text style={styles.nome}>Gabriela Yamamoto</Text>
+
+                <Image
+                    source={require('../assets/imagem-perfil.png')}
+                    style={styles.imagem}
+                />
+
                 <Text style={styles.cargo}>Desenvolvedora Junior</Text>
             </View>
-            <View style={styles.sobre}>
+
+            <View style={styles.card}>
                 <Text style={styles.textoSobre}>
-                    Estudante de Desenvolvimento de Sistemas, apaixonada por tecnologia, programação e inovação. Busco crescer como desenvolvedora júnior e adquirir experiência criando soluções criativas e eficientes.
+                    Estudante de Desenvolvimento de Sistemas, apaixonada por tecnologia,
+                    programação e inovação. Busco crescer como desenvolvedora júnior e
+                    adquirir experiência criando soluções criativas e eficientes.
                 </Text>
             </View>
-        </>
-    )
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-    perfil: {
+    container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#fff',
-        paddingTop: 30,
+        justifyContent: 'center',
+        padding: 20,
+    },
+
+    perfil: {
+        alignItems: 'center',
+        marginBottom: 30,
     },
 
     nome: {
@@ -32,12 +43,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         fontWeight: 'bold',
         color: '#da2b7c',
-    },
-
-    cargo: {
-        fontSize: 16,
-        color: '#666',
-        marginTop: 8,
     },
 
     imagem: {
@@ -49,21 +54,22 @@ const styles = StyleSheet.create({
         borderColor: '#da2b7c',
     },
 
+    cargo: {
+        fontSize: 16,
+        color: '#666',
+        marginTop: 8,
+    },
+
+    card: {
+        backgroundColor: '#f5f5f5',
+        borderRadius: 16,
+        padding: 20,
+    },
+
     textoSobre: {
         fontSize: 16,
         color: '#444',
         textAlign: 'center',
         lineHeight: 22,
-    },
-
-    sobre: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f5f5',
-        marginHorizontal: 20,
-        marginBottom: 30,
-        borderRadius: 16,
-        padding: 20,
     },
 });
