@@ -4,6 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import PerfilScreen from './screens/PerfilScreen';
 import HabilidadesScreen from './screens/HabilidadesScreen';
+import ProjetosScreen from './screens/ProjetosScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +21,8 @@ export default function App() {
               iconName = focused ? 'person' : 'person-outline';
             } else if (route.name === 'Habilidades') {
               iconName = focused ? 'code-slash' : 'code-slash-outline';
+            } else if (route.name === 'Projetos') {
+              iconName = focused ? 'folder' : 'folder-outline';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -34,6 +37,7 @@ export default function App() {
           options={{ title: 'Perfil', headerShown: false }}>
         </Tab.Screen>
         <Tab.Screen name="Habilidades" component={HabilidadesScreen} />
+        <Tab.Screen name="Projetos" component={ProjetosScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
